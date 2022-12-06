@@ -1,7 +1,6 @@
 cmake_minimum_required(VERSION 2.8.12)
 
 include(CheckSymbolExists)
-include(GNUInstallDirs) # populate CMAKE_INSTALL_{LIB,BIN}DIR
 
 #========================
 # Project details / setup
@@ -32,6 +31,7 @@ else ()
 	project(libpointmatcher VERSION ${POINTMATCHER_PROJECT_VERSION})
 endif ()
 
+include(GNUInstallDirs) # populate CMAKE_INSTALL_{LIB,BIN}DIR #should be after project() call
 
 # Check if 32 bit platform
 # By default, libpointmatcher is not compatible with and will not build on a
